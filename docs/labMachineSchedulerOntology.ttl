@@ -18,21 +18,22 @@
                                          owl:versionInfo "1.0.0" ;
                                          dc:title "labMachineScheduler Ontology"@en ;
                                          dc:creator "Renzo Henrique Guzzo Leao";
-                                         dct:source <https://github.com/dwws-ufes/2026-LabMachineScheduler> ;
+                                         dc:source <https://github.com/Renzo-Henrique/labMachineSchedulerOntology> ;
+                                         dcterms:bibliographicCitation "Renzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology"@en ;
                                          dcterms:contributor "Daniel Fernandes da Silva", "Matheus Saick de Martin", "Pedro Igor Gomes de Morais" ;
                                          dcterms:created "2026-07-12"^^xsd:date ;
                                          dcterms:modified "2026-07-12"^^xsd:date ;
                                          dcterms:language "en" ;
                                          dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-                                         vann:preferredNamespacePrefix "car"@en ;
-                                         vann:preferredNamespaceUri "http://purl.org/user123/car-ontology#"^^xsd:anyURI ;
+                                         vann:preferredNamespacePrefix "labMachineScheduler"@en ;
+                                         vann:preferredNamespaceUri "https://Renzo-Henrique.github.io/labMachineSchedulerOntology#"^^xsd:anyURI ;
                                          rdfs:comment """The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.
 Cite this work as: 
-Renzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, http://purl.org/user123/labMachineScheduler-ontology
+Renzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology
 
 This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.
 
-For the source repository, see: <https://Renzo-Henrique/labMachineSchedulerOntology>"""@en  .
+For the source repository, see: <https://github.com/Renzo-Henrique/labMachineSchedulerOntology>"""@en  .
 
 #################################################################
 #    Annotation properties

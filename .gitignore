@@ -1,1 +1,7 @@
 tonto_modules
+venv
+.venv
+uv.lock
+main.py
+pyproject.toml
+.python-version
