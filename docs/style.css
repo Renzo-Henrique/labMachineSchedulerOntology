@@ -26,6 +26,11 @@ dt {
     padding: 5px 0 5px 0;
 }
 
+ul.second li {
+    margin-bottom: 10px; /* Adjust this value to increase/decrease vertical space */
+    line-height: 1.5;    /* Improves readability if your links wrap to new lines */
+}
+
 ul.hlist {
     list-style-type: none;
     border: 1px solid navy;
