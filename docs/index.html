@@ -9,12 +9,6 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ]
-  },
-  {
     "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology#",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -50,7 +44,7 @@
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.\nCite this work as: \nRenzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, http://purl.org/user123/labMachineScheduler-ontology\n\nThis work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.\n\nFor the source repository, see: <https://github.com/Renzo-Henrique/labMachineSchedulerOntology>"
+        "@value": "The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.\nCite this work as: \nRenzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology\n\nThis work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.\n\nFor the source repository, see: <https://github.com/Renzo-Henrique/labMachineSchedulerOntology>"
       }
     ],
     "https://schema.org/license": [
@@ -63,6 +57,12 @@
         "@language": "en",
         "@value": "labMachineScheduler Ontology"
       }
+    ]
+  },
+  {
+    "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
     ]
   }
 ]
@@ -145,14 +145,14 @@
             <dt>
               <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
             </dt>
-            <dd><p>car</p></dd>
+            <dd><p>labMachineScheduler</p></dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
             </dt>
             <dd>
-              <a href="http://purl.org/user123/car-ontology#">http://purl.org/user123/car-ontology#</a>
+              <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#">https://Renzo-Henrique.github.io/labMachineSchedulerOntology#</a>
             </dd>
           </div>
           <div>
@@ -169,7 +169,7 @@
             </dt>
             <dd><p>The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.
 Cite this work as: 
-Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.org/user123/labMachineScheduler-ontology</p>
+Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology</p>
 <p>This work is distributed under Creative Commons Attribution License CC BY 4.0 <a href="https://creativecommons.org/licenses/by/4.0/legalcode">https://creativecommons.org/licenses/by/4.0/legalcode</a>.</p>
 <p>For the source repository, see: <a href="https://github.com/Renzo-Henrique/labMachineSchedulerOntology">https://github.com/Renzo-Henrique/labMachineSchedulerOntology</a></p></dd>
           </div>
@@ -243,7 +243,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               <a href="#Person">Person</a>
               <ul class="hierarchy">
                 <li>
-                  <a href="#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <ul class="hierarchy">
                     <li>
                       <a href="#Professor">Professor</a>
@@ -308,7 +308,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name">name</a>
+                  <a href="#name">name</a>
                   <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
@@ -321,49 +321,49 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheAccess">characterizesTheAccess</a>
+                      <a href="#characterizesTheAccess">characterizesTheAccess</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheComputer">characterizesTheComputer</a>
+                      <a href="#characterizesTheComputer">characterizesTheComputer</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#scheduledFor">scheduledFor</a>
+                      <a href="#scheduledFor">scheduledFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#installedOn">installedOn</a>
+                      <a href="#installedOn">installedOn</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#storageFor">storageFor</a>
+                      <a href="#storageFor">storageFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#cpuFor">cpuFor</a>
+                      <a href="#cpuFor">cpuFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#gpuFor">gpuFor</a>
+                      <a href="#gpuFor">gpuFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ramFor">ramFor</a>
+                      <a href="#ramFor">ramFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -408,22 +408,22 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#WebAccess">Web Access</a>
+                  <a href="#WebAccess">Web Access</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#SSHAccess">SSH Access</a>
+                  <a href="#SSHAccess">SSH Access</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#PhysicalAccess">Physical Access</a>
+                  <a href="#PhysicalAccess">Physical Access</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AnyDeskAccess">AnyDesk Access</a>
+                  <a href="#AnyDeskAccess">AnyDesk Access</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -434,7 +434,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheAccess">characterizesTheAccess</a>
+                  <a href="#characterizesTheAccess">characterizesTheAccess</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -447,25 +447,25 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#WebAccess">Web Access</a>
+                      <a href="#WebAccess">Web Access</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#SSHAccess">SSH Access</a>
+                      <a href="#SSHAccess">SSH Access</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#PhysicalAccess">Physical Access</a>
+                      <a href="#PhysicalAccess">Physical Access</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AnyDeskAccess">AnyDesk Access</a>
+                      <a href="#AnyDeskAccess">AnyDesk Access</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -502,7 +502,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType">Access Type</a>
+                  <a href="#AccessType">Access Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -537,7 +537,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType">Access Type</a>
+                  <a href="#AccessType">Access Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -572,7 +572,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType">Access Type</a>
+                  <a href="#AccessType">Access Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -607,7 +607,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType">Access Type</a>
+                  <a href="#AccessType">Access Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -650,12 +650,12 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Server">Server</a>
+                  <a href="#Server">Server</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Desktop">Desktop</a>
+                  <a href="#Desktop">Desktop</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -666,7 +666,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheComputer">characterizesTheComputer</a>
+                  <a href="#characterizesTheComputer">characterizesTheComputer</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -679,13 +679,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Server">Server</a>
+                      <a href="#Server">Server</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Desktop">Desktop</a>
+                      <a href="#Desktop">Desktop</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -722,7 +722,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ComputerType">Computer Type</a>
+                  <a href="#ComputerType">Computer Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -757,7 +757,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ComputerType">Computer Type</a>
+                  <a href="#ComputerType">Computer Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -800,7 +800,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name_1">name</a>
+                  <a href="#name_1">name</a>
                   <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
@@ -811,22 +811,22 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="LabSchedulerUser">
-          <h3>Lab Scheduler UserUsuário do Agendador
+        <div class="property entity" id="UserOfTheLabSchedulerSystem">
+          <h3>User of the Lab Scheduler SystemUsuário do sistema de Agendamento do Laboratório
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#UserOfTheLabSchedulerSystem</code>
               </td>
             </tr>
             <tr>
@@ -846,7 +846,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Person">Person</a>
+                  <a href="#Person">Person</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -857,12 +857,12 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Student">Student</a>
+                  <a href="#Student">Student</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Professor">Professor</a>
+                  <a href="#Professor">Professor</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -873,7 +873,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#email">email</a>
+                  <a href="#email">email</a>
                   <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
@@ -886,13 +886,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#hasPermanence">hasPermanence</a>
+                      <a href="#hasPermanence">hasPermanence</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#hasSchedule">hasSchedule</a>
+                      <a href="#hasSchedule">hasSchedule</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -907,13 +907,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Student">Student</a>
+                      <a href="#Student">Student</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Professor">Professor</a>
+                      <a href="#Professor">Professor</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -950,7 +950,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -985,7 +985,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1030,19 +1030,19 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#begin">begin</a>
+                      <a href="#begin">begin</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#end">end</a>
+                      <a href="#end">end</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#hasPermanence">hasPermanence</a>
+                      <a href="#hasPermanence">hasPermanence</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1093,7 +1093,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#usePurpose">usePurpose</a>
+                  <a href="#usePurpose">usePurpose</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1138,31 +1138,31 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#begin_1">begin</a>
+                      <a href="#begin_1">begin</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#end_1">end</a>
+                      <a href="#end_1">end</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#usePurpose">usePurpose</a>
+                      <a href="#usePurpose">usePurpose</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#hasSchedule">hasSchedule</a>
+                      <a href="#hasSchedule">hasSchedule</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#scheduledFor">scheduledFor</a>
+                      <a href="#scheduledFor">scheduledFor</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1207,7 +1207,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#OperatingSystem">Operating System</a>
+                  <a href="#OperatingSystem">Operating System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1242,7 +1242,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Software">Software</a>
+                  <a href="#Software">Software</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1255,13 +1255,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name_2">name</a>
+                      <a href="#name_2">name</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#installedOn">installedOn</a>
+                      <a href="#installedOn">installedOn</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1306,22 +1306,22 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#StorageUnit">Storage Unit</a>
+                  <a href="#StorageUnit">Storage Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#RandomAccessMemory">Random Access Memory</a>
+                  <a href="#RandomAccessMemory">Random Access Memory</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#CentralProcessingUnit">Central Processing Unit</a>
+                  <a href="#CentralProcessingUnit">Central Processing Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#GraphicsProcessingUnit">Graphics Processing Unit</a>
+                  <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1334,25 +1334,25 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#StorageUnit">Storage Unit</a>
+                      <a href="#StorageUnit">Storage Unit</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#RandomAccessMemory">Random Access Memory</a>
+                      <a href="#RandomAccessMemory">Random Access Memory</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#CentralProcessingUnit">Central Processing Unit</a>
+                      <a href="#CentralProcessingUnit">Central Processing Unit</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#GraphicsProcessingUnit">Graphics Processing Unit</a>
+                      <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -1389,7 +1389,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Hardware">Hardware</a>
+                  <a href="#Hardware">Hardware</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1400,7 +1400,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#storageFor">storageFor</a>
+                  <a href="#storageFor">storageFor</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1435,7 +1435,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Hardware">Hardware</a>
+                  <a href="#Hardware">Hardware</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1446,7 +1446,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ramFor">ramFor</a>
+                  <a href="#ramFor">ramFor</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1481,7 +1481,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Hardware">Hardware</a>
+                  <a href="#Hardware">Hardware</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1492,7 +1492,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#cpuFor">cpuFor</a>
+                  <a href="#cpuFor">cpuFor</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1527,7 +1527,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Hardware">Hardware</a>
+                  <a href="#Hardware">Hardware</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1538,7 +1538,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#gpuFor">gpuFor</a>
+                  <a href="#gpuFor">gpuFor</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1613,7 +1613,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Schedule">Schedule</a>
+                  <a href="#Schedule">Schedule</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1624,7 +1624,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#SchedulePurpose">Schedule Purpose</a>
+                  <a href="#SchedulePurpose">Schedule Purpose</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1656,7 +1656,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType">Access Type</a>
+                  <a href="#AccessType">Access Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1667,7 +1667,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1699,7 +1699,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ComputerType">Computer Type</a>
+                  <a href="#ComputerType">Computer Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1710,7 +1710,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1742,7 +1742,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Permanence">Permanence</a>
+                  <a href="#Permanence">Permanence</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1753,7 +1753,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1785,7 +1785,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Schedule">Schedule</a>
+                  <a href="#Schedule">Schedule</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1796,7 +1796,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1828,7 +1828,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Schedule">Schedule</a>
+                  <a href="#Schedule">Schedule</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1839,7 +1839,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1871,7 +1871,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#OperatingSystem">Operating System</a>
+                  <a href="#OperatingSystem">Operating System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1882,7 +1882,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1914,7 +1914,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#StorageUnit">Storage Unit</a>
+                  <a href="#StorageUnit">Storage Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1925,7 +1925,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1957,7 +1957,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#CentralProcessingUnit">Central Processing Unit</a>
+                  <a href="#CentralProcessingUnit">Central Processing Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1968,7 +1968,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2000,7 +2000,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#GraphicsProcessingUnit">Graphics Processing Unit</a>
+                  <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2011,7 +2011,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2043,7 +2043,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#RandomAccessMemory">Random Access Memory</a>
+                  <a href="#RandomAccessMemory">Random Access Memory</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2054,7 +2054,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2089,7 +2089,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Computer">Computer</a>
+                  <a href="#Computer">Computer</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2129,7 +2129,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Person">Person</a>
+                  <a href="#Person">Person</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2169,7 +2169,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#LabSchedulerUser">Lab Scheduler User</a>
+                  <a href="#UserOfTheLabSchedulerSystem">User of the Lab Scheduler System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2209,7 +2209,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Permanence">Permanence</a>
+                  <a href="#Permanence">Permanence</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2249,7 +2249,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Permanence">Permanence</a>
+                  <a href="#Permanence">Permanence</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2289,7 +2289,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Schedule">Schedule</a>
+                  <a href="#Schedule">Schedule</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2329,7 +2329,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Schedule">Schedule</a>
+                  <a href="#Schedule">Schedule</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2369,7 +2369,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, http://purl.
               </th>
               <td>
                 <span>
-                  <a href="https://Renzo-Henrique.github.io/labMachineSchedulerOntology#OperatingSystem">Operating System</a>
+                  <a href="#OperatingSystem">Operating System</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
