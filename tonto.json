@@ -1,0 +1,15 @@
+{
+   "projectName": "labMachineSchedulerOntology",
+   "displayName": "labMachineSchedulerOntology",
+   "version": "1.0.0",
+   "publisher": "Renzo-Henrique",
+   "license": "Creative Commons Attribution 4.0 International",
+   "outFolder": "out",
+   "dependencies": {},
+   "authors": [
+      {
+         "name": "Renzo Henrique Guzzo Leao"
+      }
+   ],
+   "description": "This ontology models a laboratory machine scheduling platform focused on managing lab computers, their hardware and software components, and the users that reserve them. It captures the relationships between machines, access methods, computer types, and user schedules to support a system where professors and students interact with laboratory resources."
+}

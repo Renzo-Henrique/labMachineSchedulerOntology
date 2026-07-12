@@ -1,0 +1,125 @@
+package computer
+
+kind Computer{
+    name: string [1]
+    label {
+        @en "Computer"
+        @pt-br "Computador"
+    }
+    description {
+        @en "A laboratory machine with hardware and access characteristics, such as a server or desktop, available for scheduling and management."
+        @pt-br "Uma máquina de laboratório com características de hardware e acesso, como servidor ou desktop, disponível para agendamento e gerenciamento."
+    }
+}
+
+mode TypeOfAccess{
+    label {
+        @en "Access Type"
+        @pt-br "Tipo de Acesso"
+    }
+    description {
+        @en "A category representing the method through which a computer can be accessed, including web, SSH, physical, or AnyDesk."
+        @pt-br "Uma categoria que representa o método pelo qual um computador pode ser acessado, incluindo web, SSH, físico ou AnyDesk."
+    }
+}
+disjoint complete genset SpecificTypesOfAccess {
+    general TypeOfAccess
+    specifics WebAccessType, SshAccessType, PhysicalAccessType, AnydeskAccessType
+}
+subkind WebAccessType specializes TypeOfAccess{
+    label {
+        @en "Web Access"
+        @pt-br "Acesso Web"
+    }
+    description {
+        @en "An access method that uses a web interface to manage or use the computer remotely."
+        @pt-br "Um método de acesso que utiliza uma interface web para gerenciar ou usar o computador remotamente."
+    }
+}
+subkind SshAccessType specializes TypeOfAccess{
+    label {
+        @en "SSH Access"
+        @pt-br "Acesso SSH"
+    }
+    description {
+        @en "An access method based on Secure Shell for remote command-line administration."
+        @pt-br "Um método de acesso baseado em Secure Shell para administração remota em linha de comando."
+    }
+}
+subkind PhysicalAccessType specializes TypeOfAccess{
+    label {
+        @en "Physical Access"
+        @pt-br "Acesso Físico"
+    }
+    description {
+        @en "An access type representing direct physical use of the machine in the laboratory."
+        @pt-br "Um tipo de acesso que representa o uso físico direto da máquina no laboratório."
+    }
+}
+subkind AnydeskAccessType specializes TypeOfAccess{
+    label {
+        @en "AnyDesk Access"
+        @pt-br "Acesso AnyDesk"
+    }
+    description {
+        @en "An access method that uses AnyDesk remote desktop software to connect to the computer."
+        @pt-br "Um método de acesso que usa o software de desktop remoto AnyDesk para conectar-se ao computador."
+    }
+}
+mode typeOfComputer{
+    label {
+        @en "Computer Type"
+        @pt-br "Tipo de Computador"
+    }
+    description {
+        @en "A classifier for the general kind of computer equipment, such as servers or desktops."
+        @pt-br "Um classificador para o tipo geral de equipamento de computador, como servidores ou desktops."
+    }
+}
+disjoint complete genset SpecificTypesOfComputer {
+    general typeOfComputer
+    specifics ServerComputerType, DesktopComputerType
+}
+subkind ServerComputerType specializes typeOfComputer{
+    label {
+        @en "Server"
+        @pt-br "Servidor"
+    }
+    description {
+        @en "A computer type representing laboratory servers used for centralized or shared workloads."
+        @pt-br "Um tipo de computador que representa servidores de laboratório usados para cargas de trabalho centralizadas ou compartilhadas."
+    }
+}
+subkind DesktopComputerType specializes typeOfComputer{
+    label {
+        @en "Desktop"
+        @pt-br "Desktop"
+    }
+    description {
+        @en "A computer type representing workstation-style lab machines intended for individual use."
+        @pt-br "Um tipo de computador que representa máquinas de laboratório em estilo workstation destinadas ao uso individual."
+    }
+}
+//------------
+// Relations
+//------------
+@characterization relation TypeOfAcess [1..4] -- characterizesTheAccess -- [1] Computer {
+    label {
+        @en "has access methods"
+        @pt-br "possui métodos de acesso"
+    }
+    description {
+        @en "Links each computer to one or more access types that describe how the machine can be reached."
+        @pt-br "Relaciona cada computador a um ou mais tipos de acesso que descrevem como a máquina pode ser acessada."
+    }
+}
+@characterization relation typeOfComputer [1] -- characterizesTheComputer -- [1] Computer {
+    label {
+        @en "has computer type"
+        @pt-br "possui tipo de computador"
+    }
+    description {
+        @en "Associates a computer with its general hardware category, such as server or desktop."
+        @pt-br "Associa um computador à sua categoria geral de hardware, como servidor ou desktop."
+    }
+}

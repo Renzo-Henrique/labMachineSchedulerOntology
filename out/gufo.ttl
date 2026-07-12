@@ -1,0 +1,210 @@
+@prefix : <https://example.com#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://example.com> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:Computer rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Computer"@en.
+:TypeOfAcess rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "TypeOfAcess"@en.
+:WebAcessType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "WebAcessType"@en.
+:SshAcessType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "SshAcessType"@en.
+:PhysicalAcessType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "PhysicalAcessType"@en.
+:AnydeskAcessType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "AnydeskAcessType"@en.
+:typeOfComputer rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "typeOfComputer"@en.
+:ServerComputerType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "ServerComputerType"@en.
+:DesktopComputerType rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "DesktopComputerType"@en.
+:Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Person"@en.
+:LabMachineScheduleUser rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "LabMachineScheduleUser"@en.
+:Student rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Student"@en.
+:Professor rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Professor"@en.
+:Permanence rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Permanence"@en.
+:SchedulePurpose rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:USE :MAINTENCE :CANCELED)
+].
+:USE rdf:type :SchedulePurpose;
+    rdf:label "[object Object]".
+:MAINTENCE rdf:type :SchedulePurpose;
+    rdf:label "[object Object]".
+:CANCELED rdf:type :SchedulePurpose;
+    rdf:label "[object Object]".
+:SchedulePurpose rdfs:label "SchedulePurpose"@en.
+:Schedule rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Schedule"@en.
+:Software rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Software"@en.
+:OperatingSystem rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "OperatingSystem"@en.
+:Hardware rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Hardware"@en.
+:StorageUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "StorageUnit"@en.
+:RandomAcessMemory rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "RandomAcessMemory"@en.
+:CentralProcessingUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "CentralProcessingUnit"@en.
+:GraphicsProcessingUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "GraphicsProcessingUnit"@en.
+:WebAcessType rdfs:subClassOf :TypeOfAcess.
+:SshAcessType rdfs:subClassOf :TypeOfAcess.
+:PhysicalAcessType rdfs:subClassOf :TypeOfAcess.
+:AnydeskAcessType rdfs:subClassOf :TypeOfAcess.
+:ServerComputerType rdfs:subClassOf :typeOfComputer.
+:DesktopComputerType rdfs:subClassOf :typeOfComputer.
+:WebAcessType rdfs:subClassOf :TypeOfAcess.
+:SshAcessType rdfs:subClassOf :TypeOfAcess.
+:PhysicalAcessType rdfs:subClassOf :TypeOfAcess.
+:AnydeskAcessType rdfs:subClassOf :TypeOfAcess.
+:ServerComputerType rdfs:subClassOf :typeOfComputer.
+:DesktopComputerType rdfs:subClassOf :typeOfComputer.
+:Student rdfs:subClassOf :LabMachineScheduleUser.
+:Professor rdfs:subClassOf :LabMachineScheduleUser.
+:LabMachineScheduleUser rdfs:subClassOf :Person.
+:Student rdfs:subClassOf :LabMachineScheduleUser.
+:Professor rdfs:subClassOf :LabMachineScheduleUser.
+:StorageUnit rdfs:subClassOf :Hardware.
+:RandomAcessMemory rdfs:subClassOf :Hardware.
+:CentralProcessingUnit rdfs:subClassOf :Hardware.
+:GraphicsProcessingUnit rdfs:subClassOf :Hardware.
+:OperatingSystem rdfs:subClassOf :Software.
+[ rdf:type owl:AllDisjointClasses ] owl:members (:WebAcessType :SshAcessType :PhysicalAcessType :AnydeskAcessType).
+:TypeOfAcess owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:WebAcessType :SshAcessType :PhysicalAcessType :AnydeskAcessType)
+].
+[ rdf:type owl:AllDisjointClasses ] owl:members (:ServerComputerType :DesktopComputerType).
+:typeOfComputer owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:ServerComputerType :DesktopComputerType)
+].
+:LabMachineScheduleUser owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:Student :Professor)
+].
+[ rdf:type owl:AllDisjointClasses ] owl:members (:StorageUnit :RandomAcessMemory :CentralProcessingUnit :GraphicsProcessingUnit).
+:Hardware owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:StorageUnit :RandomAcessMemory :CentralProcessingUnit :GraphicsProcessingUnit)
+].
+:name rdfs:domain :Computer;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "name"@en.
+:name_1 rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "name"@en.
+:email rdfs:domain :LabMachineScheduleUser;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "email"@en.
+:begin rdfs:domain :Permanence;
+    rdfs:range xsd:dateTime;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "begin"@en.
+:end rdfs:domain :Permanence;
+    rdfs:range xsd:dateTime;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "end"@en.
+:begin_1 rdfs:domain :Schedule;
+    rdfs:range xsd:dateTime;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "begin"@en.
+:end_1 rdfs:domain :Schedule;
+    rdfs:range xsd:dateTime;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "end"@en.
+:usePurpose rdfs:domain :Schedule;
+    rdfs:range :SchedulePurpose;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "usePurpose"@en.
+:name_2 rdfs:domain :OperatingSystem;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "name"@en.
+:characterizesTheAcess rdf:type owl:ObjectProperty;
+    rdfs:domain :TypeOfAcess;
+    rdfs:range :Computer;
+    rdfs:label "characterizesTheAcess"@en;
+    rdfs:subPropertyOf gufo:inheresIn.
+:characterizesTheComputer rdf:type owl:ObjectProperty;
+    rdfs:domain :typeOfComputer;
+    rdfs:range :Computer;
+    rdfs:label "characterizesTheComputer"@en;
+    rdfs:subPropertyOf gufo:inheresIn.
+:hasPermanence rdf:type owl:ObjectProperty;
+    rdfs:domain :Permanence;
+    rdfs:range :LabMachineScheduleUser;
+    rdfs:label "hasPermanence"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:hasSchedule rdf:type owl:ObjectProperty;
+    rdfs:domain :Schedule;
+    rdfs:range :LabMachineScheduleUser;
+    rdfs:label "hasSchedule"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:hasScheduleForPurpose rdf:type owl:ObjectProperty;
+    rdfs:domain :Schedule;
+    rdfs:range :Computer;
+    rdfs:label "hasScheduleForPurpose"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:FillThis_1 rdf:type owl:ObjectProperty;
+    rdfs:domain :OperatingSystem;
+    rdfs:range :Computer;
+    rdfs:label "FillThis"@en;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:FillThis_4 rdf:type owl:ObjectProperty;
+    rdfs:domain :StorageUnit;
+    rdfs:range :Computer;
+    rdfs:label "FillThis"@en;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:FillThis_3 rdf:type owl:ObjectProperty;
+    rdfs:domain :CentralProcessingUnit;
+    rdfs:range :Computer;
+    rdfs:label "FillThis"@en;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:FillThis_2 rdf:type owl:ObjectProperty;
+    rdfs:domain :GraphicsProcessingUnit;
+    rdfs:range :Computer;
+    rdfs:label "FillThis"@en;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:FillThis rdf:type owl:ObjectProperty;
+    rdfs:domain :RandomAcessMemory;
+    rdfs:range :Computer;
+    rdfs:label "FillThis"@en;
+    rdfs:subPropertyOf gufo:isComponentOf.
