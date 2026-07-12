@@ -15,8 +15,8 @@ kind Person{
 }
 role LabMachineScheduleUser specializes Person{
     label {
-        @en "Lab Scheduler User"
-        @pt-br "Usuário do Agendador"
+        @en "User of the Lab Scheduler System"
+        @pt-br "Usuário do sistema de Agendamento do Laboratório"
     }
     description {
         @en "A person who uses the laboratory scheduling platform, including students and professors."

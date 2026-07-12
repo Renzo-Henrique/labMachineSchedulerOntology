@@ -112,8 +112,8 @@ xsd:date rdf:type rdfs:Datatype .
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Person"@en, "Pessoa"@pt-br;
     rdfs:comment "A human being who may participate in laboratory scheduling processes."@en, "Um ser humano que pode participar dos processos de agendamento no laboratório."@pt-br.
-:LabSchedulerUser rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Lab Scheduler User"@en, "Usuário do Agendador"@pt-br;
+:UserOfTheLabSchedulerSystem rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "User of the Lab Scheduler System"@en, "Usuário do sistema de Agendamento do Laboratório"@pt-br;
     rdfs:comment "A person who uses the laboratory scheduling platform, including students and professors."@en, "Uma pessoa que utiliza a plataforma de agendamento do laboratório, incluindo alunos e professores."@pt-br.
 :Student rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Student"@en, "Aluno"@pt-br;
@@ -178,11 +178,11 @@ xsd:date rdf:type rdfs:Datatype .
 :AnyDeskAccess rdfs:subClassOf :AccessType.
 :Server rdfs:subClassOf :ComputerType.
 :Desktop rdfs:subClassOf :ComputerType.
-:Student rdfs:subClassOf :LabSchedulerUser.
-:Professor rdfs:subClassOf :LabSchedulerUser.
-:LabSchedulerUser rdfs:subClassOf :Person.
-:Student rdfs:subClassOf :LabSchedulerUser.
-:Professor rdfs:subClassOf :LabSchedulerUser.
+:Student rdfs:subClassOf :UserOfTheLabSchedulerSystem.
+:Professor rdfs:subClassOf :UserOfTheLabSchedulerSystem.
+:UserOfTheLabSchedulerSystem rdfs:subClassOf :Person.
+:Student rdfs:subClassOf :UserOfTheLabSchedulerSystem.
+:Professor rdfs:subClassOf :UserOfTheLabSchedulerSystem.
 :StorageUnit rdfs:subClassOf :Hardware.
 :RandomAccessMemory rdfs:subClassOf :Hardware.
 :CentralProcessingUnit rdfs:subClassOf :Hardware.
@@ -198,7 +198,7 @@ xsd:date rdf:type rdfs:Datatype .
   rdf:type owl:Class;
   owl:unionOf (:Server :Desktop)
 ].
-:LabSchedulerUser owl:equivalentClass [
+:UserOfTheLabSchedulerSystem owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (:Student :Professor)
 ].
@@ -217,7 +217,7 @@ xsd:date rdf:type rdfs:Datatype .
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "name"@en.
-:email rdfs:domain :LabSchedulerUser;
+:email rdfs:domain :UserOfTheLabSchedulerSystem;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -264,12 +264,12 @@ xsd:date rdf:type rdfs:Datatype .
     rdfs:subPropertyOf gufo:inheresIn.
 :hasPermanence rdf:type owl:ObjectProperty;
     rdfs:domain :Permanence;
-    rdfs:range :LabSchedulerUser;
+    rdfs:range :UserOfTheLabSchedulerSystem;
     rdfs:label "hasPermanence"@en;
     rdfs:subPropertyOf gufo:mediates.
 :hasSchedule rdf:type owl:ObjectProperty;
     rdfs:domain :Schedule;
-    rdfs:range :LabSchedulerUser;
+    rdfs:range :UserOfTheLabSchedulerSystem;
     rdfs:label "hasSchedule"@en;
     rdfs:subPropertyOf gufo:mediates.
 :scheduledFor rdf:type owl:ObjectProperty;
