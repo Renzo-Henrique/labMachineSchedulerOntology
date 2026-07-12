@@ -12,7 +12,6 @@ kind Software{
     }
 }
 subkind OperatingSystem specializes Software{
-    name: string
     label {
         @en "Operating System"
         @pt-br "Sistema Operacional"
@@ -21,6 +20,7 @@ subkind OperatingSystem specializes Software{
         @en "The system software that manages computer hardware and provides services for applications."
         @pt-br "O software de sistema que gerencia o hardware do computador e fornece serviços para aplicativos."
     }
+    name: string
 }
 category Hardware{
     label {
@@ -81,53 +81,8 @@ kind GraphicsProcessingUnit{
 // Relations
 //------------
 //------------
-@componentOf relation OperatingSystem [1] -- installedOn --<o> [1] Computer {
-    label {
-        @en "is installed on"
-        @pt-br "está instalado em"
-    }
-    description {
-        @en "Connects an operating system to the computer on which it is installed."
-        @pt-br "Conecta um sistema operacional ao computador no qual ele está instalado."
-    }
-}
-@componentOf relation StorageUnit [1..*] -- storageFor --<o> [1] Computer {
-    label {
-        @en "is storage for"
-        @pt-br "é armazenamento de"
-    }
-    description {
-        @en "Connects storage components to the computer that uses them."
-        @pt-br "Conecta componentes de armazenamento ao computador que os utiliza."
-    }
-}
-@componentOf relation CentralProcessingUnit [1..*] -- cpuFor --<o> [1] Computer {
-    label {
-        @en "is CPU for"
-        @pt-br "é CPU de"
-    }
-    description {
-        @en "Connects CPU components to the computer that contains them."
-        @pt-br "Conecta componentes de CPU ao computador que os contém."
-    }
-}
-@componentOf relation GraphicsProcessingUnit [1..*] -- gpuFor --<o> [1] Computer {
-    label {
-        @en "is GPU for"
-        @pt-br "é GPU de"
-    }
-    description {
-        @en "Connects GPU components to the computer that contains them."
-        @pt-br "Conecta componentes de GPU ao computador que os contém."
-    }
-}
-@componentOf relation RandomAcessMemory [1..*] -- ramFor --<o> [1] Computer {
-    label {
-        @en "is RAM for"
-        @pt-br "é RAM de"
-    }
-    description {
-        @en "Connects RAM components to the computer that uses them."
-        @pt-br "Conecta componentes de RAM ao computador que os utiliza."
-    }
-}  
+@componentOf relation OperatingSystem [1] -- installedOn --<o> [1] Computer
+@componentOf relation StorageUnit [1..*] -- storageFor --<o> [1] Computer
+@componentOf relation CentralProcessingUnit [1..*] -- cpuFor --<o> [1] Computer
+@componentOf relation GraphicsProcessingUnit [1..*] -- gpuFor --<o> [1] Computer
+@componentOf relation RandomAcessMemory [1..*] -- ramFor --<o> [1] Computer

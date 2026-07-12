@@ -1,12 +1,82 @@
-@prefix : <https://example.com#>.
+@prefix : <https://Renzo-Henrique.github.io/labMachineSchedulerOntology#>.
 @prefix gufo: <http://purl.org/nemo/gufo#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
-<https://example.com> rdf:type owl:Ontology;
+<https://Renzo-Henrique.github.io/labMachineSchedulerOntology> rdf:type owl:Ontology;
     owl:imports gufo:.
+
+@base <https://Renzo-Henrique.github.io/labMachineSchedulerOntology#> .
+
+<https://Renzo-Henrique.github.io/labMachineSchedulerOntology#> rdf:type owl:Ontology ;
+                                         owl:versionIRI <https://Renzo-Henrique.github.io/labMachineSchedulerOntology/1.0.0#> ;
+                                         owl:versionInfo "1.0.0" ;
+                                         dc:title "labMachineScheduler Ontology"@en ;
+                                         dc:creator "Renzo Henrique Guzzo Leao";
+                                         dct:source <https://github.com/dwws-ufes/2026-LabMachineScheduler> ;
+                                         dcterms:contributor "Daniel Fernandes da Silva", "Matheus Saick de Martin", "Pedro Igor Gomes de Morais" ;
+                                         dcterms:created "2026-07-12"^^xsd:date ;
+                                         dcterms:modified "2026-07-12"^^xsd:date ;
+                                         dcterms:language "en" ;
+                                         dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+                                         vann:preferredNamespacePrefix "car"@en ;
+                                         vann:preferredNamespaceUri "http://purl.org/user123/car-ontology#"^^xsd:anyURI ;
+                                         rdfs:comment """The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.
+Cite this work as: 
+Renzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, http://purl.org/user123/labMachineScheduler-ontology
+
+This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.
+
+For the source repository, see: <https://Renzo-Henrique/labMachineSchedulerOntology>"""@en  .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/bibliographicCitation
+dcterms:bibliographicCitation rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Classes
+#################################################################
 :Computer rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Computer"@en, "Computador"@pt-br;

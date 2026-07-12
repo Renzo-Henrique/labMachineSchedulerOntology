@@ -3,7 +3,6 @@ package user
 import computer
 
 kind Person{
-    name: string [1]
     label {
         @en "Person"
         @pt-br "Pessoa"
@@ -12,9 +11,9 @@ kind Person{
         @en "A human being who may participate in laboratory scheduling processes."
         @pt-br "Um ser humano que pode participar dos processos de agendamento no laboratório."
     }
+    name: string [1]
 }
 role LabMachineScheduleUser specializes Person{
-    email: string [1]
     label {
         @en "Lab Scheduler User"
         @pt-br "Usuário do Agendador"
@@ -23,6 +22,7 @@ role LabMachineScheduleUser specializes Person{
         @en "A person who uses the laboratory scheduling platform, including students and professors."
         @pt-br "Uma pessoa que utiliza a plataforma de agendamento do laboratório, incluindo alunos e professores."
     }
+    email: string [1]
 }
 role Student specializes LabMachineScheduleUser{
     label {
@@ -49,8 +49,6 @@ disjoint complete genset SpecificTypesOfUser {
     specifics Student, Professor
 }
 relator Permanence{
-    begin: datetime [1]
-    end: datetime [1]
     label {
         @en "Permanence"
         @pt-br "Permanência"
@@ -59,11 +57,10 @@ relator Permanence{
         @en "A period of time during which a user is present or active in the laboratory."
         @pt-br "Um período de tempo durante o qual um usuário está presente ou ativo no laboratório."
     }
+    begin: datetime [1]
+    end: datetime [1]
 }
 enum SchedulePurpose{
-    USE,
-    MAINTENANCE,
-    CANCELED
     label {
         @en "Schedule Purpose"
         @pt-br "Finalidade do Agendamento"
@@ -72,11 +69,11 @@ enum SchedulePurpose{
         @en "The reason why a schedule was created, such as use, maintenance, or cancellation."
         @pt-br "A razão pela qual um agendamento foi criado, como uso, manutenção ou cancelamento."
     }
+    USE,
+    MAINTENANCE,
+    CANCELED
 }
 relator Schedule{
-    begin: datetime [1]
-    end: datetime [1]
-    usePurpose: SchedulePurpose [1]
     label {
         @en "Schedule"
         @pt-br "Agendamento"
@@ -85,39 +82,15 @@ relator Schedule{
         @en "A reservation or maintenance interval allocated for a computer in the laboratory."
         @pt-br "Uma reserva ou intervalo de manutenção alocado para um computador no laboratório."
     }
+    begin: datetime [1]
+    end: datetime [1]
+    usePurpose: SchedulePurpose [1]
 }
 //------------
 //------------
 // Relations
 //------------
 //------------
-@mediation relation Permanence [1..*] -- hasPermanence -- [1] LabMachineScheduleUser {
-    label {
-        @en "has permanence"
-        @pt-br "possui permanência"
-    }
-    description {
-        @en "Connects a user to one or more periods of laboratory presence."
-        @pt-br "Conecta um usuário a um ou mais períodos de permanência no laboratório."
-    }
-}
-@mediation relation Schedule [0..*] -- hasSchedule -- [1] LabMachineScheduleUser {
-    label {
-        @en "has schedules"
-        @pt-br "possui agendamentos"
-    }
-    description {
-        @en "Connects a user to the schedules they own or have created."
-        @pt-br "Conecta um usuário aos agendamentos que ele possui ou criou."
-    }
-}
-@mediation relation Schedule [0..*] -- scheduledFor -- [1] computer.Computer {
-    label {
-        @en "is scheduled for"
-        @pt-br "está agendado para"
-    }
-    description {
-        @en "Connects computer schedules to the specific machine they reference."
-        @pt-br "Conecta os agendamentos de computador à máquina específica à qual eles se referem."
-    }
-}
+@mediation relation Permanence [1..*] -- hasPermanence -- [1] LabMachineScheduleUser
+@mediation relation Schedule [0..*] -- hasSchedule -- [1] LabMachineScheduleUser
+@mediation relation Schedule [0..*] -- scheduledFor -- [1] computer.Computer

@@ -1,7 +1,6 @@
 package computer
 
 kind Computer{
-    name: string [1]
     label {
         @en "Computer"
         @pt-br "Computador"
@@ -10,6 +9,7 @@ kind Computer{
         @en "A laboratory machine with hardware and access characteristics, such as a server or desktop, available for scheduling and management."
         @pt-br "Uma máquina de laboratório com características de hardware e acesso, como servidor ou desktop, disponível para agendamento e gerenciamento."
     }
+    name: string [1]
 }
 
 mode TypeOfAccess{
@@ -103,23 +103,5 @@ subkind DesktopComputerType specializes typeOfComputer{
 //------------
 // Relations
 //------------
-@characterization relation TypeOfAcess [1..4] -- characterizesTheAccess -- [1] Computer {
-    label {
-        @en "has access methods"
-        @pt-br "possui métodos de acesso"
-    }
-    description {
-        @en "Links each computer to one or more access types that describe how the machine can be reached."
-        @pt-br "Relaciona cada computador a um ou mais tipos de acesso que descrevem como a máquina pode ser acessada."
-    }
-}
-@characterization relation typeOfComputer [1] -- characterizesTheComputer -- [1] Computer {
-    label {
-        @en "has computer type"
-        @pt-br "possui tipo de computador"
-    }
-    description {
-        @en "Associates a computer with its general hardware category, such as server or desktop."
-        @pt-br "Associa um computador à sua categoria geral de hardware, como servidor ou desktop."
-    }
-}
+@characterization relation TypeOfAccess [1..4] -- characterizesTheAccess -- [1] Computer
+@characterization relation typeOfComputer [1] -- characterizesTheComputer -- [1] Computer
