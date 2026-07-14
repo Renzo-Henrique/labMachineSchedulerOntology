@@ -7,6 +7,8 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
 
 <https://Renzo-Henrique.github.io/labMachineSchedulerOntology> rdf:type owl:Ontology;
     owl:imports gufo:.
@@ -111,10 +113,12 @@ xsd:date rdf:type rdfs:Datatype .
 :ComputerPurpose rdfs:label "Computer Purpose"@en, "Finalidade do Computador"@pt-br;
     rdfs:comment "A classification of the intended use of a computer in the laboratory, such as serving as a workstation or a shared server."@en, "Uma classificação do uso pretendido de um computador no laboratório, como servir como estação de trabalho ou servidor compartilhado."@pt-br.
 :OperatingSystemType rdf:type owl:NamedIndividual;
+    owl:sameAs dbr:Operating_system;
     rdfs:subClassOf gufo:ConcreteIndividualType;
     rdfs:label "Operating System Type"@en, "Tipo de Sistema Operacional"@pt-br;
     rdfs:comment "A category representing the type of operating system, such as Windows, Linux, or macOS."@en, "Uma categoria que representa o tipo de sistema operacional, como Windows, Linux ou macOS."@pt-br.
 :Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    owl:equivalentClass foaf:Person;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Person"@en, "Pessoa"@pt-br;
     rdfs:comment "A human being who may participate in laboratory scheduling processes."@en, "Um ser humano que pode participar dos processos de agendamento no laboratório."@pt-br.
