@@ -11,7 +11,7 @@ kind Person{
         @en "A human being who may participate in laboratory scheduling processes."
         @pt-br "Um ser humano que pode participar dos processos de agendamento no laboratório."
     }
-    name: string [1]
+    personName: string [1]
 }
 role LabMachineScheduleUser specializes Person{
     label {
@@ -22,7 +22,7 @@ role LabMachineScheduleUser specializes Person{
         @en "A person who uses the laboratory scheduling platform, including students and professors."
         @pt-br "Uma pessoa que utiliza a plataforma de agendamento do laboratório, incluindo alunos e professores."
     }
-    email: string [1]
+    userEmail: string [1]
 }
 role Student specializes LabMachineScheduleUser{
     label {
@@ -57,8 +57,8 @@ relator Permanence{
         @en "A period of time during which a user is present or active in the laboratory."
         @pt-br "Um período de tempo durante o qual um usuário está presente ou ativo no laboratório."
     }
-    begin: datetime [1]
-    end: datetime [1]
+    permanenceBegin: datetime [1]
+    permanenceEnd: datetime [1]
 }
 enum SchedulePurpose{
     label {
@@ -82,8 +82,8 @@ relator Schedule{
         @en "A reservation or maintenance interval allocated for a computer in the laboratory."
         @pt-br "Uma reserva ou intervalo de manutenção alocado para um computador no laboratório."
     }
-    begin: datetime [1]
-    end: datetime [1]
+    scheduleBegin: datetime [1]
+    scheduleEnd: datetime [1]
     usePurpose: SchedulePurpose [1]
 }
 //------------

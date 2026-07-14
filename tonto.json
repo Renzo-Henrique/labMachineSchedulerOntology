@@ -11,5 +11,5 @@
          "name": "Renzo Henrique Guzzo Leao"
       }
    ],
-   "description": "This ontology models a laboratory machine scheduling platform focused on managing lab computers, their hardware and software components, and the users that reserve them. It captures the relationships between machines, access methods, computer types, and user schedules to support a system where professors and students interact with laboratory resources."
+   "description": "The ontology represents a shared research lab environment in which computers are registered with concrete technical properties such as storage capacity, read/write speed, RAM size and frequency, and CPU/GPU specifications. Each computer can be classified by access configuration (web, SSH, physical presence, AnyDesk) and by purpose (server or desktop). The model also supports software and hardware composition, as well as scheduling and user roles."
 }

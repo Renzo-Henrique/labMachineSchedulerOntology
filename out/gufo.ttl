@@ -11,32 +11,38 @@
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Computer"@en, "Computador"@pt-br;
     rdfs:comment "A laboratory machine with hardware and access characteristics, such as a server or desktop, available for scheduling and management."@en, "Uma máquina de laboratório com características de hardware e acesso, como servidor ou desktop, disponível para agendamento e gerenciamento."@pt-br.
-:AccessType rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Access Type"@en, "Tipo de Acesso"@pt-br;
-    rdfs:comment "A category representing the method through which a computer can be accessed, including web, SSH, physical, or AnyDesk."@en, "Uma categoria que representa o método pelo qual um computador pode ser acessado, incluindo web, SSH, físico ou AnyDesk."@pt-br.
-:WebAccess rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Web Access"@en, "Acesso Web"@pt-br;
-    rdfs:comment "An access method that uses a web interface to manage or use the computer remotely."@en, "Um método de acesso que utiliza uma interface web para gerenciar ou usar o computador remotamente."@pt-br.
-:SSHAccess rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "SSH Access"@en, "Acesso SSH"@pt-br;
-    rdfs:comment "An access method based on Secure Shell for remote command-line administration."@en, "Um método de acesso baseado em Secure Shell para administração remota em linha de comando."@pt-br.
-:PhysicalAccess rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Physical Access"@en, "Acesso Físico"@pt-br;
-    rdfs:comment "An access type representing direct physical use of the machine in the laboratory."@en, "Um tipo de acesso que representa o uso físico direto da máquina no laboratório."@pt-br.
-:AnyDeskAccess rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "AnyDesk Access"@en, "Acesso AnyDesk"@pt-br;
-    rdfs:comment "An access method that uses AnyDesk remote desktop software to connect to the computer."@en, "Um método de acesso que usa o software de desktop remoto AnyDesk para conectar-se ao computador."@pt-br.
-:ComputerType rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Computer Type"@en, "Tipo de Computador"@pt-br;
-    rdfs:comment "A classifier for the general kind of computer equipment, such as servers or desktops."@en, "Um classificador para o tipo geral de equipamento de computador, como servidores ou desktops."@pt-br.
-:Server rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Server"@en, "Servidor"@pt-br;
-    rdfs:comment "A computer type representing laboratory servers used for centralized or shared workloads."@en, "Um tipo de computador que representa servidores de laboratório usados para cargas de trabalho centralizadas ou compartilhadas."@pt-br.
-:Desktop rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Desktop"@en, "Desktop"@pt-br;
-    rdfs:comment "A computer type representing workstation-style lab machines intended for individual use."@en, "Um tipo de computador que representa máquinas de laboratório em estilo workstation destinadas ao uso individual."@pt-br.
+:AccessConfiguration rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:WEB :SSH :PHYSICAL_PRESENCE :ANYDESK)
+].
+:WEB rdf:type :AccessConfiguration;
+    rdf:label "[object Object]".
+:SSH rdf:type :AccessConfiguration;
+    rdf:label "[object Object]".
+:PHYSICAL_PRESENCE rdf:type :AccessConfiguration;
+    rdf:label "[object Object]".
+:ANYDESK rdf:type :AccessConfiguration;
+    rdf:label "[object Object]".
+:AccessConfiguration rdfs:label "Access Configuration"@en, "Configuração de Acesso"@pt-br;
+    rdfs:comment "A classification of how a computer can be reached or used, such as through the web, SSH, physical presence, or AnyDesk."@en, "Uma classificação de como um computador pode ser alcançado ou usado, como por meio da web, SSH, presença física ou AnyDesk."@pt-br.
+:ComputerPurpose rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:SERVER :DESKTOP)
+].
+:SERVER rdf:type :ComputerPurpose;
+    rdf:label "[object Object]".
+:DESKTOP rdf:type :ComputerPurpose;
+    rdf:label "[object Object]".
+:ComputerPurpose rdfs:label "Computer Purpose"@en, "Finalidade do Computador"@pt-br;
+    rdfs:comment "A classification of the intended use of a computer in the laboratory, such as serving as a workstation or a shared server."@en, "Uma classificação do uso pretendido de um computador no laboratório, como servir como estação de trabalho ou servidor compartilhado."@pt-br.
+:OperatingSystemType rdf:type owl:NamedIndividual;
+    rdfs:subClassOf gufo:ConcreteIndividualType;
+    rdfs:label "Operating System Type"@en, "Tipo de Sistema Operacional"@pt-br;
+    rdfs:comment "A category representing the type of operating system, such as Windows, Linux, or macOS."@en, "Uma categoria que representa o tipo de sistema operacional, como Windows, Linux ou macOS."@pt-br.
 :Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Person"@en, "Pessoa"@pt-br;
@@ -72,125 +78,124 @@
     rdfs:subClassOf gufo:Relator;
     rdfs:label "Schedule"@en, "Agendamento"@pt-br;
     rdfs:comment "A reservation or maintenance interval allocated for a computer in the laboratory."@en, "Uma reserva ou intervalo de manutenção alocado para um computador no laboratório."@pt-br.
-:Software rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Software"@en, "Software"@pt-br;
-    rdfs:comment "A general software artifact that may be installed onto laboratory computers, including operating systems."@en, "Um artefato de software geral que pode ser instalado em computadores de laboratório, incluindo sistemas operacionais."@pt-br.
-:OperatingSystem rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Operating System"@en, "Sistema Operacional"@pt-br;
-    rdfs:comment "The system software that manages computer hardware and provides services for applications."@en, "O software de sistema que gerencia o hardware do computador e fornece serviços para aplicativos."@pt-br.
-:Hardware rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Hardware"@en, "Hardware"@pt-br;
-    rdfs:comment "The physical components of a computer, including memory, storage, CPU, and GPU."@en, "Os componentes físicos de um computador, incluindo memória, armazenamento, CPU e GPU."@pt-br.
-:StorageUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:label "Storage Unit"@en, "Unidade de Armazenamento"@pt-br;
-    rdfs:comment "A hardware component that provides persistent data storage for the computer."@en, "Um componente de hardware que fornece armazenamento persistente de dados para o computador."@pt-br.
-:RandomAccessMemory rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:label "Random Access Memory"@en, "Memória de Acesso Aleatório"@pt-br;
-    rdfs:comment "A hardware component used for temporary data storage while the computer is running."@en, "Um componente de hardware usado para armazenamento temporário de dados enquanto o computador está em execução."@pt-br.
-:CentralProcessingUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:label "Central Processing Unit"@en, "Unidade Central de Processamento"@pt-br;
-    rdfs:comment "A hardware component responsible for executing instructions and processing data."@en, "Um componente de hardware responsável por executar instruções e processar dados."@pt-br.
-:GraphicsProcessingUnit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:label "Graphics Processing Unit"@en, "Unidade de Processamento Gráfico"@pt-br;
-    rdfs:comment "A hardware component responsible for rendering graphics and accelerating visual workloads."@en, "Um componente de hardware responsável por renderizar gráficos e acelerar cargas visuais."@pt-br.
-:WebAccess rdfs:subClassOf :AccessType.
-:SSHAccess rdfs:subClassOf :AccessType.
-:PhysicalAccess rdfs:subClassOf :AccessType.
-:AnyDeskAccess rdfs:subClassOf :AccessType.
-:Server rdfs:subClassOf :ComputerType.
-:Desktop rdfs:subClassOf :ComputerType.
-:WebAccess rdfs:subClassOf :AccessType.
-:SSHAccess rdfs:subClassOf :AccessType.
-:PhysicalAccess rdfs:subClassOf :AccessType.
-:AnyDeskAccess rdfs:subClassOf :AccessType.
-:Server rdfs:subClassOf :ComputerType.
-:Desktop rdfs:subClassOf :ComputerType.
 :Student rdfs:subClassOf :UserOfTheLabSchedulerSystem.
 :Professor rdfs:subClassOf :UserOfTheLabSchedulerSystem.
 :UserOfTheLabSchedulerSystem rdfs:subClassOf :Person.
 :Student rdfs:subClassOf :UserOfTheLabSchedulerSystem.
 :Professor rdfs:subClassOf :UserOfTheLabSchedulerSystem.
-:StorageUnit rdfs:subClassOf :Hardware.
-:RandomAccessMemory rdfs:subClassOf :Hardware.
-:CentralProcessingUnit rdfs:subClassOf :Hardware.
-:GraphicsProcessingUnit rdfs:subClassOf :Hardware.
-:OperatingSystem rdfs:subClassOf :Software.
-[ rdf:type owl:AllDisjointClasses ] owl:members (:WebAccess :SSHAccess :PhysicalAccess :AnyDeskAccess).
-:AccessType owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:WebAccess :SSHAccess :PhysicalAccess :AnyDeskAccess)
-].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:Server :Desktop).
-:ComputerType owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:Server :Desktop)
-].
 :UserOfTheLabSchedulerSystem owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (:Student :Professor)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:StorageUnit :RandomAccessMemory :CentralProcessingUnit :GraphicsProcessingUnit).
-:Hardware owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:StorageUnit :RandomAccessMemory :CentralProcessingUnit :GraphicsProcessingUnit)
-].
-:name rdfs:domain :Computer;
+:computerName rdfs:domain :Computer;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "name"@en.
-:name_1 rdfs:domain :Person;
+    rdfs:label "computerName"@en.
+:computerInternalId rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "computerInternalId"@en.
+:quantityOfStorage rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "quantityOfStorage"@en.
+:writeVelocity rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "writeVelocity"@en.
+:readVelocity rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "readVelocity"@en.
+:ramFrequency rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "ramFrequency"@en.
+:quantityOfRam rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "quantityOfRam"@en.
+:cpuName rdfs:domain :Computer;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "name"@en.
-:email rdfs:domain :UserOfTheLabSchedulerSystem;
+    rdfs:label "cpuName"@en.
+:cpuFrequency rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "cpuFrequency"@en.
+:gpuName rdfs:domain :Computer;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "email"@en.
-:begin rdfs:domain :Permanence;
+    rdfs:label "gpuName"@en.
+:gpuFrequency rdfs:domain :Computer;
+    rdfs:range :number;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "gpuFrequency"@en.
+:accessConfiguration rdfs:domain :Computer;
+    rdfs:range :AccessConfiguration;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "accessConfiguration"@en.
+:computerPurpose rdfs:domain :Computer;
+    rdfs:range :ComputerPurpose;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "computerPurpose"@en.
+:operatingSystemTypeName rdfs:domain :OperatingSystemType;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "operatingSystemTypeName"@en.
+:personName rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "personName"@en.
+:userEmail rdfs:domain :UserOfTheLabSchedulerSystem;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "userEmail"@en.
+:permanenceBegin rdfs:domain :Permanence;
     rdfs:range xsd:dateTime;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "begin"@en.
-:end rdfs:domain :Permanence;
+    rdfs:label "permanenceBegin"@en.
+:permanenceEnd rdfs:domain :Permanence;
     rdfs:range xsd:dateTime;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "end"@en.
-:begin_1 rdfs:domain :Schedule;
+    rdfs:label "permanenceEnd"@en.
+:scheduleBegin rdfs:domain :Schedule;
     rdfs:range xsd:dateTime;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "begin"@en.
-:end_1 rdfs:domain :Schedule;
+    rdfs:label "scheduleBegin"@en.
+:scheduleEnd rdfs:domain :Schedule;
     rdfs:range xsd:dateTime;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "end"@en.
+    rdfs:label "scheduleEnd"@en.
 :usePurpose rdfs:domain :Schedule;
     rdfs:range :SchedulePurpose;
     rdf:type owl:ObjectProperty;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue;
     rdfs:label "usePurpose"@en.
-:name_2 rdfs:domain :OperatingSystem;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "name"@en.
-:characterizesTheAccess rdf:type owl:ObjectProperty;
-    rdfs:domain :AccessType;
+:manages rdf:type owl:ObjectProperty;
+    rdfs:domain :OperatingSystemType;
     rdfs:range :Computer;
-    rdfs:label "characterizesTheAccess"@en;
-    rdfs:subPropertyOf gufo:inheresIn.
-:characterizesTheComputer rdf:type owl:ObjectProperty;
-    rdfs:domain :ComputerType;
-    rdfs:range :Computer;
-    rdfs:label "characterizesTheComputer"@en;
-    rdfs:subPropertyOf gufo:inheresIn.
+    rdfs:label "manages"@en.
 :hasPermanence rdf:type owl:ObjectProperty;
     rdfs:domain :Permanence;
     rdfs:range :UserOfTheLabSchedulerSystem;
@@ -206,28 +211,3 @@
     rdfs:range :Computer;
     rdfs:label "scheduledFor"@en;
     rdfs:subPropertyOf gufo:mediates.
-:installedOn rdf:type owl:ObjectProperty;
-    rdfs:domain :OperatingSystem;
-    rdfs:range :Computer;
-    rdfs:label "installedOn"@en;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:storageFor rdf:type owl:ObjectProperty;
-    rdfs:domain :StorageUnit;
-    rdfs:range :Computer;
-    rdfs:label "storageFor"@en;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:cpuFor rdf:type owl:ObjectProperty;
-    rdfs:domain :CentralProcessingUnit;
-    rdfs:range :Computer;
-    rdfs:label "cpuFor"@en;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:gpuFor rdf:type owl:ObjectProperty;
-    rdfs:domain :GraphicsProcessingUnit;
-    rdfs:range :Computer;
-    rdfs:label "gpuFor"@en;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:ramFor rdf:type owl:ObjectProperty;
-    rdfs:domain :RandomAccessMemory;
-    rdfs:range :Computer;
-    rdfs:label "ramFor"@en;
-    rdfs:subPropertyOf gufo:isComponentOf.

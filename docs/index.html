@@ -9,6 +9,12 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ]
+  },
+  {
     "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology#",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -38,13 +44,13 @@
     "https://schema.org/dateModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-07-12"
+        "@value": "2026-07-13"
       }
     ],
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.\nCite this work as: \nRenzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology\n\nThis work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.\n\nFor the source repository, see: <https://github.com/Renzo-Henrique/labMachineSchedulerOntology>"
+        "@value": "The ontology represents a shared research lab environment in which computers are registered with concrete technical properties such as storage capacity, read/write speed, RAM size and frequency, and CPU/GPU specifications. Each computer can be classified by access configuration (web, SSH, physical presence, AnyDesk) and by purpose (server or desktop). The model also supports software and hardware composition, as well as scheduling and user roles.\nCite this work as: \nRenzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology\n\nThis work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.\n\nFor the source repository, see: <https://github.com/Renzo-Henrique/labMachineSchedulerOntology>"
       }
     ],
     "https://schema.org/license": [
@@ -57,12 +63,6 @@
         "@language": "en",
         "@value": "labMachineScheduler Ontology"
       }
-    ]
-  },
-  {
-    "@id": "https://Renzo-Henrique.github.io/labMachineSchedulerOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
     ]
   }
 ]
@@ -117,7 +117,7 @@
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
             </dt>
-            <dd><p>2026-07-12</p></dd>
+            <dd><p>2026-07-13</p></dd>
           </div>
           <div>
             <dt>
@@ -167,7 +167,7 @@
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
             </dt>
-            <dd><p>The ontology represents a shared research lab environment in which computers can be registered as desktops or servers and accessed through multiple methods such as web interfaces, SSH, physical presence, or AnyDesk. It also distinguishes user roles and the scheduling of machines for use or maintenance, providing a structure for managing availability and reservation intent.
+            <dd><p>The ontology represents a shared research lab environment in which computers are registered with concrete technical properties such as storage capacity, read/write speed, RAM size and frequency, and CPU/GPU specifications. Each computer can be classified by access configuration (web, SSH, physical presence, AnyDesk) and by purpose (server or desktop). The model also supports software and hardware composition, as well as scheduling and user roles.
 Cite this work as: 
 Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology</p>
 <p>This work is distributed under Creative Commons Attribution License CC BY 4.0 <a href="https://creativecommons.org/licenses/by/4.0/legalcode">https://creativecommons.org/licenses/by/4.0/legalcode</a>.</p>
@@ -189,52 +189,16 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
         <div class="hierarchy">
           <ul class="hierarchy">
             <li>
-              <a href="#AccessType">Access Type</a>
-              <ul class="hierarchy">
-                <li>
-                  <a href="#AnyDeskAccess">AnyDesk Access</a>
-                </li>
-                <li>
-                  <a href="#PhysicalAccess">Physical Access</a>
-                </li>
-                <li>
-                  <a href="#SSHAccess">SSH Access</a>
-                </li>
-                <li>
-                  <a href="#WebAccess">Web Access</a>
-                </li>
-              </ul>
+              <a href="#AccessConfiguration">Access Configuration</a>
             </li>
             <li>
               <a href="#Computer">Computer</a>
             </li>
             <li>
-              <a href="#ComputerType">Computer Type</a>
-              <ul class="hierarchy">
-                <li>
-                  <a href="#Desktop">Desktop</a>
-                </li>
-                <li>
-                  <a href="#Server">Server</a>
-                </li>
-              </ul>
+              <a href="#ComputerPurpose">Computer Purpose</a>
             </li>
             <li>
-              <a href="#Hardware">Hardware</a>
-              <ul class="hierarchy">
-                <li>
-                  <a href="#CentralProcessingUnit">Central Processing Unit</a>
-                </li>
-                <li>
-                  <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
-                </li>
-                <li>
-                  <a href="#RandomAccessMemory">Random Access Memory</a>
-                </li>
-                <li>
-                  <a href="#StorageUnit">Storage Unit</a>
-                </li>
-              </ul>
+              <a href="#OperatingSystemType">Operating System Type</a>
             </li>
             <li>
               <a href="#Permanence">Permanence</a>
@@ -260,14 +224,6 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </li>
             <li>
               <a href="#SchedulePurpose">Schedule Purpose</a>
-            </li>
-            <li>
-              <a href="#Software">Software</a>
-              <ul class="hierarchy">
-                <li>
-                  <a href="#OperatingSystem">Operating System</a>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>
@@ -307,10 +263,86 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
               </th>
               <td>
-                <span>
-                  <a href="#name">name</a>
-                  <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                </span>
+                <ul class="pylodelitlist">
+                  <li>
+                    <span>
+                      <a href="#computerName">computerName</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#computerInternalId">computerInternalId</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#quantityOfStorage">quantityOfStorage</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#writeVelocity">writeVelocity</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#readVelocity">readVelocity</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#ramFrequency">ramFrequency</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#quantityOfRam">quantityOfRam</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#cpuName">cpuName</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#cpuFrequency">cpuFrequency</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#gpuName">gpuName</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#gpuFrequency">gpuFrequency</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#accessConfiguration">accessConfiguration</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#computerPurpose">computerPurpose</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
             <tr>
@@ -321,13 +353,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="#characterizesTheAccess">characterizesTheAccess</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#characterizesTheComputer">characterizesTheComputer</a>
+                      <a href="#manages">manages</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -337,50 +363,20 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
-                  <li>
-                    <span>
-                      <a href="#installedOn">installedOn</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#storageFor">storageFor</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#cpuFor">cpuFor</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#gpuFor">gpuFor</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#ramFor">ramFor</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
                 </ul>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="AccessType">
-          <h3>Access TypeTipo de Acesso
+        <div class="property entity" id="AccessConfiguration">
+          <h3>Access ConfigurationConfiguração de Acesso
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessType</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AccessConfiguration</code>
               </td>
             </tr>
             <tr>
@@ -389,8 +385,8 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               </th>
               <td>
                 <ul class="pylodelitlist">
-                  <li><p>A category representing the method through which a computer can be accessed, including web, SSH, physical, or AnyDesk.</p></li>
-                  <li><p>Uma categoria que representa o método pelo qual um computador pode ser acessado, incluindo web, SSH, físico ou AnyDesk.</p></li>
+                  <li><p>A classification of how a computer can be reached or used, such as through the web, SSH, physical presence, or AnyDesk.</p></li>
+                  <li><p>Uma classificação de como um computador pode ser alcançado ou usado, como por meio da web, SSH, presença física ou AnyDesk.</p></li>
                 </ul>
               </td>
             </tr>
@@ -399,33 +395,105 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+                <a href="http://purl.org/nemo/gufo#QualityValue">gufo:QualityValue</a>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
               </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
               <td>
                 <span>
-                  <a href="#WebAccess">Web Access</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                  <a href="#accessConfiguration">accessConfiguration</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
-                <span class="cardinality">or</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ComputerPurpose">
+          <h3>Computer PurposeFinalidade do Computador
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ComputerPurpose</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul class="pylodelitlist">
+                  <li><p>A classification of the intended use of a computer in the laboratory, such as serving as a workstation or a shared server.</p></li>
+                  <li><p>Uma classificação do uso pretendido de um computador no laboratório, como servir como estação de trabalho ou servidor compartilhado.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#QualityValue">gufo:QualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
+              </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
                 <span>
-                  <a href="#SSHAccess">SSH Access</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                  <a href="#computerPurpose">computerPurpose</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#PhysicalAccess">Physical Access</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#AnyDeskAccess">AnyDesk Access</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="OperatingSystemType">
+          <h3>Operating System TypeTipo de Sistema Operacional
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#OperatingSystemType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul class="pylodelitlist">
+                  <li><p>A category representing the type of operating system, such as Windows, Linux, or macOS.</p></li>
+                  <li><p>Uma categoria que representa o tipo de sistema operacional, como Windows, Linux ou macOS.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#ConcreteIndividualType">gufo:ConcreteIndividualType</a>
               </td>
             </tr>
             <tr>
@@ -433,333 +501,20 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
               </th>
               <td>
-                <span>
-                  <a href="#characterizesTheAccess">characterizesTheAccess</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="#WebAccess">Web Access</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                      <a href="#operatingSystemTypeName">operatingSystemTypeName</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#SSHAccess">SSH Access</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#PhysicalAccess">Physical Access</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#AnyDeskAccess">AnyDesk Access</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                      <a href="#manages">manages</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="WebAccess">
-          <h3>Web AccessAcesso Web
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#WebAccess</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>An access method that uses a web interface to manage or use the computer remotely.</p></li>
-                  <li><p>Um método de acesso que utiliza uma interface web para gerenciar ou usar o computador remotamente.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#AccessType">Access Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="SSHAccess">
-          <h3>SSH AccessAcesso SSH
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#SSHAccess</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>An access method based on Secure Shell for remote command-line administration.</p></li>
-                  <li><p>Um método de acesso baseado em Secure Shell para administração remota em linha de comando.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#AccessType">Access Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="PhysicalAccess">
-          <h3>Physical AccessAcesso Físico
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#PhysicalAccess</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>An access type representing direct physical use of the machine in the laboratory.</p></li>
-                  <li><p>Um tipo de acesso que representa o uso físico direto da máquina no laboratório.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#AccessType">Access Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="AnyDeskAccess">
-          <h3>AnyDesk AccessAcesso AnyDesk
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#AnyDeskAccess</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>An access method that uses AnyDesk remote desktop software to connect to the computer.</p></li>
-                  <li><p>Um método de acesso que usa o software de desktop remoto AnyDesk para conectar-se ao computador.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#AccessType">Access Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="ComputerType">
-          <h3>Computer TypeTipo de Computador
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ComputerType</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A classifier for the general kind of computer equipment, such as servers or desktops.</p></li>
-                  <li><p>Um classificador para o tipo geral de equipamento de computador, como servidores ou desktops.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Server">Server</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#Desktop">Desktop</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#characterizesTheComputer">characterizesTheComputer</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li>
-                    <span>
-                      <a href="#Server">Server</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#Desktop">Desktop</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Server">
-          <h3>ServerServidor
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Server</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A computer type representing laboratory servers used for centralized or shared workloads.</p></li>
-                  <li><p>Um tipo de computador que representa servidores de laboratório usados para cargas de trabalho centralizadas ou compartilhadas.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#ComputerType">Computer Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Desktop">
-          <h3>DesktopDesktop
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Desktop</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A computer type representing workstation-style lab machines intended for individual use.</p></li>
-                  <li><p>Um tipo de computador que representa máquinas de laboratório em estilo workstation destinadas ao uso individual.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#ComputerType">Computer Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
               </td>
             </tr>
           </table>
@@ -800,7 +555,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               </th>
               <td>
                 <span>
-                  <a href="#name_1">name</a>
+                  <a href="#personName">personName</a>
                   <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
@@ -873,7 +628,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               </th>
               <td>
                 <span>
-                  <a href="#email">email</a>
+                  <a href="#userEmail">userEmail</a>
                   <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
@@ -1030,13 +785,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="#begin">begin</a>
+                      <a href="#permanenceBegin">permanenceBegin</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#end">end</a>
+                      <a href="#permanenceEnd">permanenceEnd</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -1138,13 +893,13 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="#begin_1">begin</a>
+                      <a href="#scheduleBegin">scheduleBegin</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#end_1">end</a>
+                      <a href="#scheduleEnd">scheduleEnd</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -1171,381 +926,9 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Software">
-          <h3>SoftwareSoftware
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Software</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A general software artifact that may be installed onto laboratory computers, including operating systems.</p></li>
-                  <li><p>Um artefato de software geral que pode ser instalado em computadores de laboratório, incluindo sistemas operacionais.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#FunctionalComplex">gufo:FunctionalComplex</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#OperatingSystem">Operating System</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="OperatingSystem">
-          <h3>Operating SystemSistema Operacional
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#OperatingSystem</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>The system software that manages computer hardware and provides services for applications.</p></li>
-                  <li><p>O software de sistema que gerencia o hardware do computador e fornece serviços para aplicativos.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Software">Software</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li>
-                    <span>
-                      <a href="#name_2">name</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#installedOn">installedOn</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Hardware">
-          <h3>HardwareHardware
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#Hardware</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>The physical components of a computer, including memory, storage, CPU, and GPU.</p></li>
-                  <li><p>Os componentes físicos de um computador, incluindo memória, armazenamento, CPU e GPU.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#FunctionalComplex">gufo:FunctionalComplex</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#StorageUnit">Storage Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#RandomAccessMemory">Random Access Memory</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#CentralProcessingUnit">Central Processing Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">or</span>
-                <span>
-                  <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li>
-                    <span>
-                      <a href="#StorageUnit">Storage Unit</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#RandomAccessMemory">Random Access Memory</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#CentralProcessingUnit">Central Processing Unit</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="StorageUnit">
-          <h3>Storage UnitUnidade de Armazenamento
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#StorageUnit</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A hardware component that provides persistent data storage for the computer.</p></li>
-                  <li><p>Um componente de hardware que fornece armazenamento persistente de dados para o computador.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Hardware">Hardware</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#storageFor">storageFor</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="RandomAccessMemory">
-          <h3>Random Access MemoryMemória de Acesso Aleatório
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#RandomAccessMemory</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A hardware component used for temporary data storage while the computer is running.</p></li>
-                  <li><p>Um componente de hardware usado para armazenamento temporário de dados enquanto o computador está em execução.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Hardware">Hardware</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#ramFor">ramFor</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="CentralProcessingUnit">
-          <h3>Central Processing UnitUnidade Central de Processamento
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#CentralProcessingUnit</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A hardware component responsible for executing instructions and processing data.</p></li>
-                  <li><p>Um componente de hardware responsável por executar instruções e processar dados.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Hardware">Hardware</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#cpuFor">cpuFor</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="GraphicsProcessingUnit">
-          <h3>Graphics Processing UnitUnidade de Processamento Gráfico
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#GraphicsProcessingUnit</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li><p>A hardware component responsible for rendering graphics and accelerating visual workloads.</p></li>
-                  <li><p>Um componente de hardware responsável por renderizar gráficos e acelerar cargas visuais.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Hardware">Hardware</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#gpuFor">gpuFor</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
       </div>
+      <span class="cardinality">,</span>
+      <span class="cardinality">,</span>
       <span class="cardinality">,</span>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
@@ -1553,16 +936,10 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
         <div class="hierarchy">
           <ul class="hierarchy">
             <li>
-              <a href="#characterizesTheAccess">characterizesTheAccess</a>
+              <a href="#accessConfiguration">accessConfiguration</a>
             </li>
             <li>
-              <a href="#characterizesTheComputer">characterizesTheComputer</a>
-            </li>
-            <li>
-              <a href="#cpuFor">cpuFor</a>
-            </li>
-            <li>
-              <a href="#gpuFor">gpuFor</a>
+              <a href="#computerPurpose">computerPurpose</a>
             </li>
             <li>
               <a href="#hasPermanence">hasPermanence</a>
@@ -1571,16 +948,10 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               <a href="#hasSchedule">hasSchedule</a>
             </li>
             <li>
-              <a href="#installedOn">installedOn</a>
-            </li>
-            <li>
-              <a href="#ramFor">ramFor</a>
+              <a href="#manages">manages</a>
             </li>
             <li>
               <a href="#scheduledFor">scheduledFor</a>
-            </li>
-            <li>
-              <a href="#storageFor">storageFor</a>
             </li>
             <li>
               <a href="#usePurpose">usePurpose</a>
@@ -1588,6 +959,92 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
           </ul>
         </div>
         <h3 id="object-property-definitions">Object Property Definitions</h3>
+        <div class="property entity" id="accessConfiguration">
+          <h3>accessConfiguration
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#accessConfiguration</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasReifiedQualityValue">gufo:hasReifiedQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#AccessConfiguration">Access Configuration</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="computerPurpose">
+          <h3>computerPurpose
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#computerPurpose</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasReifiedQualityValue">gufo:hasReifiedQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#ComputerPurpose">Computer Purpose</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="usePurpose">
           <h3>usePurpose
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -1631,23 +1088,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="characterizesTheAccess">
-          <h3>characterizesTheAccess
+        <div class="property entity" id="manages">
+          <h3>manages
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheAccess</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#manages</code>
               </td>
             </tr>
             <tr>
@@ -1656,50 +1105,7 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               </th>
               <td>
                 <span>
-                  <a href="#AccessType">Access Type</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="characterizesTheComputer">
-          <h3>characterizesTheComputer
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#characterizesTheComputer</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#ComputerType">Computer Type</a>
+                  <a href="#OperatingSystemType">Operating System Type</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1846,233 +1252,18 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="installedOn">
-          <h3>installedOn
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#installedOn</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#isComponentOf">gufo:isComponentOf</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#OperatingSystem">Operating System</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="storageFor">
-          <h3>storageFor
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#storageFor</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#isComponentOf">gufo:isComponentOf</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#StorageUnit">Storage Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="cpuFor">
-          <h3>cpuFor
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#cpuFor</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#isComponentOf">gufo:isComponentOf</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#CentralProcessingUnit">Central Processing Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="gpuFor">
-          <h3>gpuFor
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#gpuFor</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#isComponentOf">gufo:isComponentOf</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#GraphicsProcessingUnit">Graphics Processing Unit</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="ramFor">
-          <h3>ramFor
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ramFor</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#isComponentOf">gufo:isComponentOf</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#RandomAccessMemory">Random Access Memory</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Computer">Computer</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
       </div>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
-        <div class="property entity" id="name">
-          <h3>name
+        <div class="property entity" id="computerName">
+          <h3>computerName
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#computerName</code>
               </td>
             </tr>
             <tr>
@@ -2104,15 +1295,455 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="name_1">
-          <h3>name
+        <div class="property entity" id="computerInternalId">
+          <h3>computerInternalId
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name_1</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#computerInternalId</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="quantityOfStorage">
+          <h3>quantityOfStorage
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#quantityOfStorage</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="writeVelocity">
+          <h3>writeVelocity
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#writeVelocity</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="readVelocity">
+          <h3>readVelocity
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#readVelocity</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ramFrequency">
+          <h3>ramFrequency
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#ramFrequency</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="quantityOfRam">
+          <h3>quantityOfRam
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#quantityOfRam</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="cpuName">
+          <h3>cpuName
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#cpuName</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="cpuFrequency">
+          <h3>cpuFrequency
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#cpuFrequency</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="gpuName">
+          <h3>gpuName
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#gpuName</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="gpuFrequency">
+          <h3>gpuFrequency
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#gpuFrequency</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Computer">Computer</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="#number">number</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="operatingSystemTypeName">
+          <h3>operatingSystemTypeName
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#operatingSystemTypeName</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#OperatingSystemType">Operating System Type</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="personName">
+          <h3>personName
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#personName</code>
               </td>
             </tr>
             <tr>
@@ -2144,15 +1775,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="email">
-          <h3>email
+        <div class="property entity" id="userEmail">
+          <h3>userEmail
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#email</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#userEmail</code>
               </td>
             </tr>
             <tr>
@@ -2184,15 +1815,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="begin">
-          <h3>begin
+        <div class="property entity" id="permanenceBegin">
+          <h3>permanenceBegin
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#begin</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#permanenceBegin</code>
               </td>
             </tr>
             <tr>
@@ -2224,15 +1855,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="end">
-          <h3>end
+        <div class="property entity" id="permanenceEnd">
+          <h3>permanenceEnd
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#end</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#permanenceEnd</code>
               </td>
             </tr>
             <tr>
@@ -2264,15 +1895,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="begin_1">
-          <h3>begin
+        <div class="property entity" id="scheduleBegin">
+          <h3>scheduleBegin
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#begin_1</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#scheduleBegin</code>
               </td>
             </tr>
             <tr>
@@ -2304,15 +1935,15 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
             </tr>
           </table>
         </div>
-        <div class="property entity" id="end_1">
-          <h3>end
+        <div class="property entity" id="scheduleEnd">
+          <h3>scheduleEnd
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#end_1</code>
+                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#scheduleEnd</code>
               </td>
             </tr>
             <tr>
@@ -2340,46 +1971,6 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
               </th>
               <td>
                 <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="name_2">
-          <h3>name
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://Renzo-Henrique.github.io/labMachineSchedulerOntology#name_2</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://purl.org/nemo/gufo#hasQualityValue">gufo:hasQualityValue</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#OperatingSystem">Operating System</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>
@@ -2562,6 +2153,35 @@ Renzo Henrique Guzzo Leao "The labMachineScheduler Ontology", 2026, https://Renz
           </dd>
         </dl>
       </div>
-      
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-op" title="OWL Object Property">op</sup>
+            </td>
+            <td>Object Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+            </td>
+            <td>Datatype Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+            </td>
+            <td>Annotation Properties</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
