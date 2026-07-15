@@ -24,7 +24,7 @@
                                          dcterms:bibliographicCitation "Renzo Henrique Guzzo Leao \"The labMachineScheduler Ontology\", 2026, https://Renzo-Henrique.github.io/labMachineSchedulerOntology"@en ;
                                          dcterms:contributor "Daniel Fernandes da Silva", "Matheus Saick de Martin", "Pedro Igor Gomes de Morais" ;
                                          dcterms:created "2026-07-12"^^xsd:date ;
-                                         dcterms:modified "2026-07-13"^^xsd:date ;
+                                         dcterms:modified "2026-07-15"^^xsd:date ;
                                          dcterms:language "en" ;
                                          dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
                                          vann:preferredNamespacePrefix "labMachineScheduler"@en ;
@@ -113,7 +113,6 @@ xsd:date rdf:type rdfs:Datatype .
 :ComputerPurpose rdfs:label "Computer Purpose"@en, "Finalidade do Computador"@pt-br;
     rdfs:comment "A classification of the intended use of a computer in the laboratory, such as serving as a workstation or a shared server."@en, "Uma classificação do uso pretendido de um computador no laboratório, como servir como estação de trabalho ou servidor compartilhado."@pt-br.
 :OperatingSystemType rdf:type owl:NamedIndividual;
-    owl:sameAs dbr:Operating_system;
     rdfs:subClassOf gufo:ConcreteIndividualType;
     rdfs:label "Operating System Type"@en, "Tipo de Sistema Operacional"@pt-br;
     rdfs:comment "A category representing the type of operating system, such as Windows, Linux, or macOS."@en, "Uma categoria que representa o tipo de sistema operacional, como Windows, Linux ou macOS."@pt-br.
@@ -164,6 +163,7 @@ xsd:date rdf:type rdfs:Datatype .
 ].
 :computerName rdfs:domain :Computer;
     rdfs:range xsd:string;
+    owl:equivalentProperty foaf:name ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "computerName"@en.
@@ -199,6 +199,7 @@ xsd:date rdf:type rdfs:Datatype .
     rdfs:label "quantityOfRam"@en.
 :cpuName rdfs:domain :Computer;
     rdfs:range xsd:string;
+    owl:equivalentProperty foaf:name ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "cpuName"@en.
@@ -209,6 +210,7 @@ xsd:date rdf:type rdfs:Datatype .
     rdfs:label "cpuFrequency"@en.
 :gpuName rdfs:domain :Computer;
     rdfs:range xsd:string;
+    owl:equivalentProperty foaf:name ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "gpuName"@en.
@@ -229,16 +231,19 @@ xsd:date rdf:type rdfs:Datatype .
     rdfs:label "computerPurpose"@en.
 :operatingSystemTypeName rdfs:domain :OperatingSystemType;
     rdfs:range xsd:string;
+    owl:equivalentProperty foaf:name ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "operatingSystemTypeName"@en.
 :personName rdfs:domain :Person;
     rdfs:range xsd:string;
+    owl:equivalentProperty foaf:name ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "personName"@en.
 :userEmail rdfs:domain :UserOfTheLabSchedulerSystem;
     rdfs:range xsd:string;
+    owl:equivalentProperty <http://schema.org/email> ;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "userEmail"@en.
